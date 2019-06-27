@@ -1,0 +1,28 @@
+body{
+  background-color: #ebf1fa;
+}
+header{
+  width: 100%;
+  height: 80px;
+  background-color: #d5e2f7;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-bottom: 1px solid #5091f2;
+  z-index: 99;
+  img{
+    height: 80px;
+    float: left;
+    padding: 5px;
+  }
+  nav{
+    float: right;
+    line-height: 80px;
+    a{
+      margin-left: 10px;
+    }
+  }
+}
+#main{
+  margin-top: 80px;
+}

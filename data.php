@@ -18,13 +18,9 @@ $result = $conn->query($sql); //se va in errore la query ritorna FALSE
 
 if($result) {
   if($result->num_rows > 0) {
-    /*echo '<table>'.'<tr>'.'<th>'.'numero stanza'.'</th>'.'<th>'.'piano'.'</th>'.'</tr>';*/
     while($row = $result -> fetch_assoc()){
-      echo 'Stanza n.'.$row['room_number'].' piano:'.$row['floor'];
-      echo '<br>';
-    /*  echo '<tr>'.'<td>'.$row['room_number'].'</td>';
-      echo '<td>'.$row['floor'].'</td>'.'</tr>'.'</table>'.'<br>';*/
-
+      echo 'id '.$row['id'].'Stanza n.'.$row['room_number'].' piano:'.$row['floor'].'posti letto: '.$row['beds'];
+      echo '<br.>';
     }
   } else {
     echo '0 results';
