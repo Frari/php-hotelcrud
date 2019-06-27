@@ -10,40 +10,30 @@ if($conn && $conn->connect_error){
   exit();
 }
 
+// query per andare a vedere i dettagli stanza dal pusante secondo l'id della stanza
 $sql = "SELECT * FROM stanze";
 $result = $conn->query($sql); //se va in errore la query ritorna FALSE
  ?>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>php-hotelcrud</title>
-    <link rel="stylesheet" href="public/css/app.css">
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/39/HiltonHotelsLogo.svg/1200px-HiltonHotelsLogo.svg.png" alt="logo">
-        <nav>
-          <a href="#">HOME</a>
-          <a href="#">CHI SIAMO</a>
-          <a href="#">GALLERIA</a>
-          <a href="#">CONTATTI</a>
-        </nav>
-      </div>
-    </header>
+<!-- includo il file con la parti di html per potrli riutilizzare nelle altre pagine-->
+<?php
+  include 'layout/head.php';
+  include 'layout/navbar.php';
+ ?>
+
     <div id="main" class="container">
       <div class="row">
         <div class="col-12">
           <table class="table">
+            <h1>Stanze Hotel</h1>
             <thead>
               <tr>
-                <th scope="col">ID</th>
+                <th class="text-center" scope="col">ID</th>
                 <th class="text-center" scope="col">Room number</th>
                 <th class="text-center" scope="col">Floor</th>
                 <th class="text-center" scope="col">Beds</th>
                 <th class="text-center" scope="col">Created at</th>
                 <th class="text-center" scope="col">Updated at</th>
+                <th class="text-center" scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -52,12 +42,19 @@ $result = $conn->query($sql); //se va in errore la query ritorna FALSE
               if($result->num_rows > 0) {
                 while($row = $result -> fetch_assoc()){ ?>
                   <tr>
-                    <td><?php echo $row['id'] ?></td>
+                    <td class="text-center"><?php echo $row['id'] ?></td>
                     <td class="text-center"><?php echo $row['room_number'] ?></td>
                     <td class="text-center"><?php echo $row['floor'] ?></td>
                     <td class="text-center"><?php echo $row['beds'] ?></td>
                     <td class="text-center"><?php echo $row['created_at'] ?></td>
                     <td class="text-center"><?php echo $row['updated_at'] ?></td>
+                    <td class="text-center">
+                      <div class="btn-group" role="group" aria-label="Basic example">
+                        <a href="show.php?id=<?php echo $row['id'] ?>" type="button" class="btn btn-Primary">Dettagli</a>
+                        <button type="button" class="btn btn-Warning">Modifica</button>
+                        <button type="button" class="btn btn-Danger">Cancella</button>
+                      </div>
+                    </td>
                   </tr>
                   <?php
                 }
