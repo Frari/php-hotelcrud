@@ -55,3 +55,4 @@ $result = $conn->query($sql); //se va in errore la query ritorna FALSE
     </div>
   </div>
 </div>
+<?php $conn->close(); ?>

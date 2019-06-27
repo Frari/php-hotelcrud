@@ -50,9 +50,10 @@ $result = $conn->query($sql); //se va in errore la query ritorna FALSE
                     <td class="text-center"><?php echo $row['updated_at'] ?></td>
                     <td class="text-center">
                       <div class="btn-group" role="group" aria-label="Basic example">
-                        <a href="show.php?id=<?php echo $row['id'] ?>" type="button" class="btn btn-Primary">Dettagli</a>
-                        <button type="button" class="btn btn-Warning">Modifica</button>
-                        <button type="button" class="btn btn-Danger">Cancella</button>
+                        <a href="show.php?id=<?php echo $row['id'] ?>" type="button" class="btn btn-primary">Dettagli</a>
+                        <!-- link del pulsante modifica a edit.php avendo come riferimento sempre l'id della stanza -->
+                        <a href="edit.php?id=<?php echo $row['id'] ?>" type="button" class="btn btn-warning">Modifica</a>
+                        <button href='#' type="button" class="btn btn-danger">Cancella</button>
                       </div>
                     </td>
                   </tr>
@@ -72,3 +73,4 @@ $result = $conn->query($sql); //se va in errore la query ritorna FALSE
     </div> <!--container-->
   </body>
 </html>
+<?php $conn->close(); ?>
