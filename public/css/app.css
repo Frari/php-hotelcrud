@@ -11111,6 +11111,12 @@ body {
 #main h1 {
   text-align: center;
   margin: 20px;
+  display: inline-block;
+}
+
+#but_aggiungi {
+  float: right;
+  margin-top: 22.5px;
 }
 
 header {

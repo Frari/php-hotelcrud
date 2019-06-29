@@ -25,6 +25,7 @@ $result = $conn->query($sql); //se va in errore la query ritorna FALSE
         <div class="col-12">
           <table class="table">
             <h1>Stanze Hotel</h1>
+            <a id="but_aggiungi" class="btn btn-info" href="#">Inserisci nuova stanza</a>
             <thead>
               <tr>
                 <th class="text-center" scope="col">ID</th>
@@ -53,7 +54,8 @@ $result = $conn->query($sql); //se va in errore la query ritorna FALSE
                         <a href="show.php?id=<?php echo $row['id'] ?>" type="button" class="btn btn-primary">Dettagli</a>
                         <!-- link del pulsante modifica a edit.php avendo come riferimento sempre l'id della stanza -->
                         <a href="edit.php?id=<?php echo $row['id'] ?>" type="button" class="btn btn-warning">Modifica</a>
-                        <button href='#' type="button" class="btn btn-danger">Cancella</button>
+                        <!-- link del pulsante cancella a delete.php avendo come riferimento sempre l'id della stanza -->
+                        <a href='delete.php?id=<?php echo $row['id'] ?>' type="button" class="btn btn-danger">Cancella</a>
                       </div>
                     </td>
                   </tr>

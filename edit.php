@@ -21,7 +21,7 @@ $result = $conn->query($sql); //se va in errore la query ritorna FALSE
   include 'layout/head.php';
   include 'layout/navbar.php';
  ?>
-<div id="main"class="container">
+<div id="main" class="container">
   <div class="row">
     <div class="col-12">
       <h1>modifica stanza <?php echo $id_stanza  ?></h1>
@@ -34,18 +34,18 @@ $result = $conn->query($sql); //se va in errore la query ritorna FALSE
               <input type="hidden" name="id" value="<?php $row['id']; ?>">
               <div class="form-group">
                 <label for="room_number">Numero stanza:</label>
-                <input type="text" name="room_number" value="<?php $row['room_number']; ?>" placeholder="numero">
+                <input type="text" name="room_number" value="<?php echo $row['room_number']; ?>" placeholder="numero">
               </div>
               <div class="form-group">
                 <label for="floor">Piano:</label>
-                <input type="number" name="floor" value="<?php $row['floor']; ?>" placeholder="piano">
+                <input type="number" name="floor" value="<?php echo $row['floor']; ?>" placeholder="piano">
               </div>
               <div class="form-group">
                 <label for="beds">Numero posti letto:</label>
-                <input type="number" name="beds" value="<?php $row['beds']; ?>" placeholder="posti letto">
+                <input type="number" name="beds" value="<?php echo $row['beds']; ?>" placeholder="posti letto">
               </div>
               <div class="form-group">
-                <input type="submit" name="" value="salva">
+                <input type="submit" name="" value="salva" class="btn btn-success">
               </div>
             </form>
             <?php
