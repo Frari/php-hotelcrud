@@ -15,7 +15,7 @@ if(empty($_POST)){
   echo "Si è verificato un errore";
   exit();
 }
-// recupero i dati provenienti dal posti
+// recupero i dati provenienti dal post
 $id = intval($_POST['id']);
 $room_number = intval($_POST['room_number']);
 $floor = intval($_POST['floor']);

@@ -25,7 +25,7 @@ $result = $conn->query($sql); //se va in errore la query ritorna FALSE
         <div class="col-12">
           <table class="table">
             <h1>Stanze Hotel</h1>
-            <a id="but_aggiungi" class="btn btn-info" href="#">Inserisci nuova stanza</a>
+            <a id="but_aggiungi" class="btn btn-info" href="create.php">Inserisci nuova stanza</a>
             <thead>
               <tr>
                 <th class="text-center" scope="col">ID</th>
