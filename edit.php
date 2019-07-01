@@ -31,7 +31,7 @@ $result = $conn->query($sql); //se va in errore la query ritorna FALSE
         if($result->num_rows > 0) {
           while($row = $result -> fetch_assoc()){ ?>
             <form action="edit_manager.php" method="post">
-              <input type="hidden" name="id" value="<?php $row['id']; ?>">
+              <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
               <div class="form-group">
                 <label for="room_number">Numero stanza:</label>
                 <input type="text" name="room_number" value="<?php echo $row['room_number']; ?>" placeholder="numero">

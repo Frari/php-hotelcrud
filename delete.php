@@ -12,7 +12,7 @@ if($conn && $conn->connect_error){
 // variabile per intercettare il valore in get del click pulsante cancella
 $id_stanza = intval($_GET['id']);
 
-$sql = "DELETE FROM stanza WHERE id = $id_stanza";
+$sql = "DELETE FROM stanze WHERE id = $id_stanza";
 
 $result = $conn->query($sql);
 
